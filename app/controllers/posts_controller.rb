@@ -4,10 +4,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(content: params[:content])
-    # contentカラムはparams[:content]（新規投稿ページで記述された内容）として保存する
-    redirect_to action: :index
-    # メモを保存した後にトップページへリダイレクトされる
+    # メモ作成時に未読の情報を保存
+    post = Post.create(content: params[:content], checked: false)
+    # レスポンスをJSONに変更
+    render json:{ post: post }
   end
 
   def checked
