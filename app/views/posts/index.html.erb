@@ -5,7 +5,8 @@
 <% end %>
 
 <% @posts.each do |post| %>
-  <div class="post">
+  <%# メモの情報をjsで受け取るための記述 %>
+  <div class="post" data-id=<%= post.id %> data-check=<%= post.checked %>>
     <div class="post-date">
       投稿日時：<%= post.created_at %>
     </div>
