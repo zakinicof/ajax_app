@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  # URLは/posts,行き先はpostsコントローラーのindexアクション
-  get "posts", to: "posts#index"
-  get "posts/new", to: "posts#new"
+  # ルートパスをposts#indexに変更
+  root to: "posts#index"
   post "posts", to: "posts#create"
 end
