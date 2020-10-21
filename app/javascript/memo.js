@@ -8,6 +8,7 @@ function memo() {
     // 非同期通信を実装するためにオブジェクトを生成
     const XHR = new XMLHttpRequest();
     // リクエストの内容を引数へ追記
+    XHR.open("POST", "/posts", true);
     // レスポンスの形式をjsonに指定
     XHR.responseType = "json";
     // リクエストを送信
