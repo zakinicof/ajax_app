@@ -4,7 +4,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    
+    # メモ作成時に未読の情報を保存
+    post = Post.create(content: params[:content], checked: false)
+    # レスポンスをJSONに変更
+    render json:{ post: post }
   end
 
   def checked
